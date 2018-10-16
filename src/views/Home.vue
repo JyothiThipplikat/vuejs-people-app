@@ -1,18 +1,48 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    
+  <div>
+      
   </div>
+
+  <div v-for="person in peoples">
+    <h2>{{ people.name }} - {{ people.bioVisible }}</h2>
+    <p>{{ people.bio }}</p>
+  </div>
+
+</div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<style>
+</style>
 
+<script>
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+  data: function() {
+    return {
+      message: "Welcome to Vue.js!",
+      people: [
+      {
+        name: "Daisy",
+        bio: "Loves to dance",
+        bioVisible: false
+      },
+      {
+        name: "James",
+        bio: "Favorite hobby is to eat out",
+        bioVisible: false
+      },
+      {
+        name: "James",
+        bio: "Favorite hobby is to eat out",
+        bioVisible: false
+      }
+      ],
+      addPerson: {name: "", bio:""}
+    };
+  },
+  created: function() {},
+  methods: {},
+  computed: {}
+};
 </script>
